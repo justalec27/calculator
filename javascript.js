@@ -17,15 +17,12 @@ function operate(num1, operator, num2){
 }
 
 function isValidNumber(value) {
-    if ( value === 0 )
-        return "is zero"
-    else if (value === "")
-        return "is string"
-    else if (value === null)
-        return "is null"
+   return value !== null && value !== "" && value !== undefined;
 }
 
 console.log(isValidNumber(num1))
+console.log(isValidNumber(num2))
+console.log(isValidNumber(operator))
 
 //button functions
 const outcome = document.querySelector(".outcome")
@@ -46,7 +43,7 @@ clear.addEventListener("click", (event) => {
 
 const decimal = document.querySelector(".decimal")
 decimal.addEventListener("click", (event) => {
-    if ( num1.includes(".") === false || num2.includes(".") === false ){
+    if ( outcome.includes(".") === false){
         if (result != ""){
         num1 = result;
         result = ""
@@ -61,14 +58,13 @@ decimal.addEventListener("click", (event) => {
             num2 += ".";
             outcome.textContent = num2
         }
+    } else {
+        ;
+}          
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
     console.log(`The result is ${result}`)
     console.log(`The operator is ${operator}`)
-    } else if (num1.contains(".") === true || num2.contains(".") === true){
-        ;
-    }
-
 })
 
 const zero = document.querySelector(".zero")
@@ -327,7 +323,7 @@ multiply.addEventListener("click", (event) => {
             num2 = "";
             operator = "";
             result = ""; 
-    }   else{
+    }   else  {
         num1 = Number(num1)
         num2 = Number(num2)
         result = operate(num1, operator, num2)
@@ -401,6 +397,7 @@ equals.addEventListener("click", (event) => {
             num2 = "";
             operator = "";
             result = "";
+            outcome.textContent = "Enter a number"
     // Prevent divide by zero
         } else if ( Number(num2) === 0 && operator === "/") {
             window.alert("We can not divide with a zero. \nPlease start over.")
