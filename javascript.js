@@ -25,7 +25,7 @@ console.log(isValidNumber(num2))
 console.log(isValidNumber(operator))
 
 //button functions
-const outcome = document.querySelector(".outcome")
+const display = document.querySelector(".outcome")
 
 const clear = document.querySelector(".clear")
 clear.addEventListener("click", (event) => {
@@ -33,7 +33,7 @@ clear.addEventListener("click", (event) => {
     num2 = "";
     operator = "";
     result = "";
-    outcome.textContent = ""
+    display.textContent = ""
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
     console.log(`The result is ${result}`)
@@ -43,29 +43,41 @@ clear.addEventListener("click", (event) => {
 
 const decimal = document.querySelector(".decimal")
 decimal.addEventListener("click", (event) => {
-    if ( outcome.includes(".") === false){
+    if (display.textContent.includes(".") === false){
         if (result != ""){
         num1 = result;
         result = ""
         num2 = "";
         num2 += ".";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += ".";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += ".";
-            outcome.textContent = num2
+            display.textContent = num2
         }
-    } else {
-        ;
+    
 }          
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
     console.log(`The result is ${result}`)
     console.log(`The operator is ${operator}`)
 })
+
+const backspace = document.querySelector(".backspace")
+backspace.addEventListener("click", (event) => {
+    display.textContent = display.textContent.slice(0,-1)
+     if (result !== "") {
+        result = result.toString().slice(0, -1);
+    } else if (operator === "") {
+        num1 = num1.slice(0, -1);
+    } else {
+        num2 = num2.slice(0, -1);
+    }
+})
+
 
 const zero = document.querySelector(".zero")
 zero.addEventListener("click", (event) => {
@@ -74,14 +86,14 @@ zero.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "0";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "0";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "0";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -96,14 +108,14 @@ one.addEventListener("click", (event) => {
       result = ""
       num2 = "";
       num2 += "1";
-      outcome.textContent = num2;
+      display.textContent = num2;
 
     } else if (operator === ""){
         num1 += "1";
-        outcome.textContent = num1
+        display.textContent = num1
     } else if (operator != "" && result === ""){
         num2 += "1";
-        outcome.textContent = num2
+        display.textContent = num2
     }
 console.log(`The num1 is ${num1}`)
 console.log(`The num2 is ${num2}`)
@@ -118,14 +130,14 @@ two.addEventListener("click", (event) => {
       result = ""
       num2 = "";
       num2 += "2";
-      outcome.textContent = num2;
+      display.textContent = num2;
 
     } else if (operator === ""){
         num1 += "2";
-        outcome.textContent = num1
+        display.textContent = num1
     } else if (operator != "" && result === ""){
         num2 += "2";
-        outcome.textContent = num2
+        display.textContent = num2
     }
 console.log(`The num1 is ${num1}`)
 console.log(`The num2 is ${num2}`)
@@ -140,14 +152,14 @@ three.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "3";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "3";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "3";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -162,14 +174,14 @@ four.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "4";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "4";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "4";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -184,14 +196,14 @@ five.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "5";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "5";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "5";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -206,14 +218,14 @@ six.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "6";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "6";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "6";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -228,14 +240,14 @@ seven.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "7";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "7";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "7";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -250,14 +262,14 @@ eight.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "8";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "8";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "8";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -272,14 +284,14 @@ nine.addEventListener("click", (event) => {
         result = ""
         num2 = "";
         num2 += "9";
-        outcome.textContent = num2;
+        display.textContent = num2;
 
         } else if (operator === ""){
             num1 += "9";
-            outcome.textContent = num1
+            display.textContent = num1
         } else if (operator != "" && result === ""){
             num2 += "9";
-            outcome.textContent = num2
+            display.textContent = num2
         }
     console.log(`The num1 is ${num1}`)
     console.log(`The num2 is ${num2}`)
@@ -303,7 +315,7 @@ divide.addEventListener("click", (event) => {
             num1 = Number(num1)
             num2 = Number(num2)
             result = operate(num1, operator, num2)
-            outcome.textContent = result
+            display.textContent = result
             operator = "/"
     }}
     console.log(`The num1 is ${num1}`)
@@ -327,7 +339,7 @@ multiply.addEventListener("click", (event) => {
         num1 = Number(num1)
         num2 = Number(num2)
         result = operate(num1, operator, num2)
-        outcome.textContent = result
+        display.textContent = result
         operator = "*"
     }
  }
@@ -352,7 +364,7 @@ minus.addEventListener("click", (event) => {
             num1 = Number(num1)
             num2 = Number(num2)
             result = operate(num1, operator, num2)
-            outcome.textContent = result
+            display.textContent = result
             operator = "-"
     }
 }
@@ -377,7 +389,7 @@ add.addEventListener("click", (event) => {
         num1 = Number(num1)
         num2 = Number(num2)
         result = (operate(num1, operator, num2))
-        outcome.textContent = result
+        display.textContent = result
         operator = "+"
     }
  }
@@ -397,7 +409,7 @@ equals.addEventListener("click", (event) => {
             num2 = "";
             operator = "";
             result = "";
-            outcome.textContent = "Enter a number"
+            display.textContent = "Enter a number"
     // Prevent divide by zero
         } else if ( Number(num2) === 0 && operator === "/") {
             window.alert("We can not divide with a zero. \nPlease start over.")
@@ -410,7 +422,7 @@ equals.addEventListener("click", (event) => {
             num1 = Number(num1)
             num2 = Number(num2)
             result = operate(num1, operator, num2)
-            outcome.textContent = result
+            display.textContent = result
          }
         console.log(`The num1 is ${num1}`)
         console.log(`The num2 is ${num2}`)
@@ -418,12 +430,31 @@ equals.addEventListener("click", (event) => {
         console.log(`The operator is ${operator}`)
 })
 
+const button = document.querySelectorAll("button")
+
+button.forEach((btn) => {
+  btn.addEventListener("mouseover", (event) => {
+  btn.style.backgroundColor = "#ffffffcd";
+});
+
+  btn.addEventListener("mouseout", (event) => {
+  btn.style.backgroundColor =  "#263542";
+});
+})
+
+
+// Add keyboard support
+
+
 
 /* 
 
 Open issues:
 1. Pressing = before entering all of the numbers or an operator could cause problems! 
     UPDATE: problems seems solved. Check again tomorrow
-2. divide by zero is also not working at .equals
+    UPDATE: not working yet
+
+2. Add keyboard supports
+
 
 */
