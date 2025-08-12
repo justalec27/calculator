@@ -13,6 +13,7 @@ Basic Operations:
 - Division
 - Input memory
 - Number entry exteeds single digit 
+- Decimal numbers are allowed
 
 ## Builth with
 - HTML: Structure of the web page.
@@ -22,8 +23,8 @@ Basic Operations:
 ## How to use
 1. Enter a first digit (you can click multiple digits, e.g. for 10, you click "1" and "0")
 2. Choose an operator (/, *, - , +)
-3. Enter second digit ()
+3. Enter second digit
 4. Click "=" for output
 
-AC = clear all
-Del = Delete last digit
+- AC = clear all
+- Del = Delete last digit

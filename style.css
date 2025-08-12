@@ -1,11 +1,21 @@
 *{
     font-family: "Roboto", sans-serif;
+    /* border: 1px solid red; */
 }
 
-body { 
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
+html, body { 
+    background-image: linear-gradient(to top, #8083be ,#000000);
+    background: linear-gradient(
+		to right,
+		 #6e7c89,
+		 #293036
+	);
+}
+
+h1 {
+    font-size: 60px;
+    font-family: "Zilla Slab", serif, Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 .container{
@@ -81,4 +91,28 @@ button {
 .top-left {
     height: 80px;
     width: 80px;
+}
+
+.outside-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.container {
+    margin-top: 50px;
+    margin-left: -100px ;
+    align-self: center;
+}
+
+.left-column {
+    margin-top: -200px;
+    margin-left: 200px;
+   
+}
+
+li {    
+    line-height: 30px;
+    font-family: "Zilla Slab", serif, Arial, Helvetica, sans-serif;
+    color: white;
 }
